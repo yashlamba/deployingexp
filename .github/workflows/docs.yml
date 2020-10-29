@@ -22,4 +22,4 @@ jobs:
         run: |
           git config user.name "yashlamba" && git config user.email "yashlamba2000@gmail.com"
           git fetch origin
-          mkdocs gh-deploy
+          mkdocs gh-deploy --dirty
