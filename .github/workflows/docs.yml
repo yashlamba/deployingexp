@@ -21,4 +21,5 @@ jobs:
       - name: Build site
         run: |
           git config user.name "yashlamba" && git config user.email "yashlamba2000@gmail.com"
+          git fetch origin
           mkdocs gh-deploy
