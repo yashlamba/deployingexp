@@ -1,0 +1,23 @@
+name: Docs
+on:
+  workflow_run:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.7'
+          architecture: 'x64'
+      - name: Install dependencies
+        run: |
+          python3 -m pip install --upgrade pip  
+          python3 -m pip install mkdocs      
+          python3 -m pip install mkdocs-material
+          python3 -m pip install pymdown-extensions
+      - name: Build site
+        run: |
+          git config user.name "yashlamba" && git config user.email "yashlamba2000@gmail.com"
+          mkdocs gh-deploy
