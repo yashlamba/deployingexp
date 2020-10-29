@@ -22,4 +22,7 @@ jobs:
         run: |
           git config user.name "yashlamba" && git config user.email "yashlamba2000@gmail.com"
           git fetch origin
+          mkdocs build
+          git clone -b latestweb https://github.com/yashlamba/deployingexp/ web/
+          mv web/web/ site/
           mkdocs gh-deploy --dirty
